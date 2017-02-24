@@ -12,5 +12,6 @@
     <string name="unfavourite">Unfavourite</string>
     <string name="no_response">No Response</string>
     <string name="result">Results</string>
+    <string name="book_cover">Book Cover</string>
 
 </resources>

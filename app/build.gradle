@@ -3,10 +3,10 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            keyAlias 'key14'
-            keyPassword 'An1341414'
-            storeFile file('/home/azcs/AndroidStudioProjects/kyesStore.jks')
-            storePassword 'An1341414'
+            keyAlias 'key0'
+            keyPassword '123456'
+            storeFile file('/home/azcs/Documents/key.jks')
+            storePassword '123456'
         }
     }
     compileSdkVersion 25
@@ -25,9 +25,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
+        debug {
+        }
     }
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
+    }
+    productFlavors {
     }
 }
 

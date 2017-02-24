@@ -26,11 +26,14 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/book_title"
             android:text="@string/title_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     <EditText
+        android:hint="@string/title_name"
+        android:labelFor="@+id/book_title"
         android:id="@+id/bookName"
         android:paddingBottom="@dimen/paddingEditText"
         android:layout_width="match_parent"
@@ -38,12 +41,15 @@
 
         <TextView
             android:visibility="gone"
+            android:id="@+id/book_author"
             tools:text="@string/auther_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     <EditText
+        android:hint="@string/auther_name"
         android:visibility="gone"
+        android:labelFor="@+id/book_author"
         android:id="@+id/authorName"
         android:paddingBottom="@dimen/paddingEditText"
         android:layout_width="match_parent"

@@ -8,11 +8,11 @@
     tools:context="com.me.azcs.reviewbooks.activities.MainActivity"
     android:orientation="vertical">
 
-    <ImageView
+    <!--ImageView
         android:src="@mipmap/ic_launcher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="80dp"/>
+        android:paddingBottom="80dp"/-->
 
     <ProgressBar
         android:id="@+id/progressBar"
