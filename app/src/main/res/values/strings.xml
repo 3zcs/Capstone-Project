@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ReviewBooks</string>
+    <string name="ChooseLang">Choose Preferable Language</string>
+    <string name="settings">Settings</string>
+    <string name="search">Search</string>
+    <string name="title_name">Book Title</string>
+    <string name="auther_name">Author Name</string>
+    <string name="favorite">Favorite</string>
+    <string name="favorite_description">Favorite this book</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="no_fevorate">There is no favorite book</string>
+    <string name="unfavourite">Unfavourite</string>
+    <string name="no_response">No Response</string>
+    <string name="result">Results</string>
+
+</resources>

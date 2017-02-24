@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "149223506892",
+    "firebase_url": "https://reviewbooks-9816e.firebaseio.com",
+    "project_id": "reviewbooks-9816e",
+    "storage_bucket": "reviewbooks-9816e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149223506892:android:b2324579e0fa9d2a",
+        "android_client_info": {
+          "package_name": "com.me.azcs.reviewbooks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149223506892-v5n9s4ueiss1j5b2t6a04ct4o6oavba2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.me.azcs.reviewbooks",
+            "certificate_hash": "08100f5b459b8435a56f549a667c5b41f31ee35f"
+          }
+        },
+        {
+          "client_id": "149223506892-0p3ibn64f06912v7lag0jefeb3dumm5p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvSBdklxod1r6-3JnJ1SQJp5SDM6BK-9I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149223506892-0p3ibn64f06912v7lag0jefeb3dumm5p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
