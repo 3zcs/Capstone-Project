@@ -1,6 +1,9 @@
 package com.me.azcs.reviewbooks.activities;
 
+import android.app.LoaderManager;
+import android.content.CursorLoader;
 import android.content.Intent;
+import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -41,7 +44,7 @@ import static com.me.azcs.reviewbooks.Constant.BOOK_NAME;
 import static com.me.azcs.reviewbooks.Constant.CONTENT_URI;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
     @BindView(R.id.my_toolbar)
     Toolbar mToolbar;
 
@@ -68,10 +71,12 @@ public class MainActivity extends AppCompatActivity {
         mToolbar.setTitle(getString(R.string.favorite));
         mToolbar.setTitleTextColor(getApplicationContext().getResources().getColor(R.color.colorTextIcon));
 
+
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        new RetrieveDataTask().execute();
+        getLoaderManager().initLoader(1,null,this);
+        //new RetrieveDataTask().execute();
     }
 
     @Override
@@ -93,6 +98,39 @@ public class MainActivity extends AppCompatActivity {
     public void showProgress(boolean isShowin){
         mProgressBar.setVisibility(isShowin?View.VISIBLE:View.GONE);
         mRecyclerView.setVisibility(isShowin?View.GONE:View.VISIBLE);
+    }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        if (id == 1)
+            return new CursorLoader(this,CONTENT_URI,null,null,null,null);
+        return null;
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+        List<Item> items = new ArrayList();
+        while(cursor.moveToNext()){
+            items.add(addNewItem(
+                    cursor.getString(cursor.getColumnIndex(BOOK_ID)),
+                    cursor.getString(cursor.getColumnIndex(BOOK_NAME)),
+                    cursor.getString(cursor.getColumnIndex(BOOK_AUTHOR)),
+                    cursor.getString(cursor.getColumnIndex(BOOK_COVER))
+            ));
+
+            showProgress(false);
+            if (items.isEmpty())
+                showNoData();
+            else {
+                mAdapter = new BooksAdapter(items, getApplicationContext());
+                mRecyclerView.setAdapter(mAdapter);
+            }
+        }
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+
     }
 
     private class RetrieveDataTask extends AsyncTask<Void,Void,List<Item>>{
@@ -135,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showNoData() {
         mRecyclerView.setVisibility(View.GONE);
+        mProgressBar.setVisibility(View.GONE);
         mNoData.setVisibility(View.VISIBLE);
     }
 
